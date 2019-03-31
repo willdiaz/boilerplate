@@ -1,0 +1,38 @@
+.hero-image {
+    height: 20vh;
+
+    @include respond(small) {
+        height: 25vh;
+    }
+
+    @include respond(medium) {
+        height: 30vh;
+    }
+    
+    background-image: url('https://picsum.photos/800');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    &--parallax {
+        @include respond(medium) {
+            background-attachment: fixed;
+        }
+    }
+
+    &__header {
+        @include absCenter();
+        font-family: 'Open Sans', sans-serif;
+        font-size: 3.2rem;
+        color: $color-black;
+
+        @include respond(small) {
+            font-size: 6.4rem;
+        }
+
+        @include respond(medium) {
+            font-size: 8rem;
+        }
+    }
+}

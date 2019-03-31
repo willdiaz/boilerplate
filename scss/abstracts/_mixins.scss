@@ -1,0 +1,25 @@
+// CLEARS A FLOATED ELEMENT
+@mixin clearfix {
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+  
+  // ABSOLUTELY CENTER THE ELEMENT INCLUDING IT
+  @mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  // OFFSET IN-PAGE ANCHORS FROM THE TOP OF THE VIEWPORT
+  @mixin offsetAnchor($top) {
+    display: block;
+    position: relative;
+    top: $top;
+    visibility: hidden;
+  }
+  

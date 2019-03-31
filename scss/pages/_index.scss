@@ -1,0 +1,17 @@
+.body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    min-height: 100vh;
+}
+
+.main {
+    margin: auto 0;
+    flex-grow: 2;
+}
+
+.block {
+    padding: 2rem;
+    line-height: 200%;
+}

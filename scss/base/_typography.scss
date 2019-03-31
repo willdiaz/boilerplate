@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+// USE THESE MIXINS TO SET FONT FAMILY AND SIZE
+@mixin typoHeading1() {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3rem;
+    color: $color-black;
+}
+
+@mixin typoHeading2() {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.5rem;
+    color: $color-black;
+}
+
+@mixin typoHeading3() {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    color: $color-black;
+}
+
+@mixin typoBodyCopy() {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    color: $color-black;
+}
+
+@mixin typoBodyLink() {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+
+    &:visited,
+    &:active,
+    &:link {
+        text-decoration: none;
+        color: $color-secondary-2;
+    }
+
+    &:hover {
+        text-decoration: underline;
+        color: $color-secondary-0;
+    }
+}

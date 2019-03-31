@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: $xs-font-size-rem;
+  @include respond(small) { font-size: $small-font-size-rem; }
+  @include respond(medium) { font-size: $medium-font-size-rem; }
+  @include respond(large) { font-size: $large-font-size-rem; }
+  @include respond(huge) { font-size: $huge-font-size-rem; }
+}
+
+body {
+  box-sizing: border-box;
+  background-color: $background-color;
+  font-size: $default-font-size;
+}
+
+::selection {
+  background-color: $color-black;
+  color: $color-white;
+}

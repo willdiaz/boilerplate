@@ -1,0 +1,33 @@
+// VIEWPORT-BASED MINIMUM WIDTHS
+// use the below min-width values with media queries
+$xs-min-width-px: 0;
+$xs-min-width-em: 0;
+
+$small-min-width-px: 600px;
+$small-min-width-em: ($small-min-width-px / $base-font-size) * 1em; // 37.5em
+
+$medium-min-width-px: 900px;
+$medium-min-width-em: ($medium-min-width-px / $base-font-size) * 1em; // 56.25em;
+
+$large-min-width-px: 1200px;
+$large-min-width-em: ($large-min-width-px / $base-font-size) * 1em; // 75em;
+
+$huge-min-width-px: 1800px;
+$huge-min-width-em: ($huge-min-width-px / $base-font-size) * 1em; // 112.5em;
+
+// ALL STYLES ASSUME THE A MIN-WIDTH OF ZERO
+// USE THIS MIXIN TO MAKE CHANGES AS THE VIEWPORT INCREASES IN WIDTH
+@mixin respond($breakpoint) {
+    @if $breakpoint == small {
+      @media only screen and (min-width: $small-min-width-px) { @content };
+    }
+    @if $breakpoint == medium {
+      @media only screen and (min-width: $medium-min-width-px) { @content };
+    }
+    @if $breakpoint == large {
+      @media only screen and (min-width: $large-min-width-px) { @content };
+    }
+    @if $breakpoint == huge {
+        @media only screen and (min-width: $huge-min-width-px) { @content };
+    }
+}
