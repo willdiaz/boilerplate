@@ -6,6 +6,8 @@ $font-family: "Arial", "Helvetica", sans-serif;
 $color-black: #000000;
 $color-white: #ffffff;
 $color-primary: #0D9EFF;
+$color-secondary: #046DB3;
+$color-tertiary: #FF9B0D;
 
 $vars: (
     font-adjust-xs: $xs-font-size-adj,
@@ -17,10 +19,14 @@ $vars: (
     color-fg: $color-black,
     color-bg: $color-white,
     color-primary: $color-primary,
+    color-secondary: $color-secondary,
+    color-tertiary: $color-tertiary,
 );
 
 $darkvars: (
     color-fg: $color-white,
     color-bg: $color-black,
-    color-primary: $color-primary,
+    color-primary: $color-tertiary,
+    color-secondary: $color-secondary,
+    color-tertiary: $color-primary,
 );

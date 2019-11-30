@@ -53,3 +53,11 @@ body {
   @include var(color, color-fg);
   @include var(font-size, default-font-size);
 }
+
+h1, h2, h3, h4 {
+  @include var(color, color-primary);
+}
+
+a {
+  @include var(color, color-tertiary);
+}
