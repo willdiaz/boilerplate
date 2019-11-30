@@ -6,21 +6,50 @@
   box-sizing: inherit;
 }
 
-html {
-  font-size: $xs-font-size-rem;
-  @include respond(small) { font-size: $small-font-size-rem; }
-  @include respond(medium) { font-size: $medium-font-size-rem; }
-  @include respond(large) { font-size: $large-font-size-rem; }
-  @include respond(huge) { font-size: $huge-font-size-rem; }
+// *,
+// *:before,
+// *:after,
+// html {
+//   -moz-box-sizing: border-box;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+// }
+
+:root {
+  @each $property, $value in $vars {
+    --#{$property}: #{$value};
+  }
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @each $property, $value in $darkvars {
+      --#{$property}: #{$value};
+    }  
+  }
+}
+
+html {
+  @include var(font-size, font-adjust-xs);
+  @include respond(small) {
+      @include var(font-size, font-adjust-sm);
+  }
+  @include respond(medium) {
+      @include var(font-size, font-adjust-md);
+  }
+  @include respond(large) {
+      @include var(font-size, font-adjust-lg);
+  }
+  @include respond(huge) {
+      @include var(font-size, font-adjust-hg);
+  }  
+}
+
 
 body {
-  box-sizing: border-box;
-  background-color: $background-color;
-  font-size: $default-font-size;
-}
-
-::selection {
-  background-color: $color-black;
-  color: $color-white;
+  margin: 0;
+  padding: 0;
+  @include var(background, color-bg);
+  @include var(color, color-fg);
+  @include var(font-size, default-font-size);
 }

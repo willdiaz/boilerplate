@@ -1,25 +1,46 @@
-// CLEARS A FLOATED ELEMENT
+// clears floated element
 @mixin clearfix {
-    &::after {
-      content: "";
-      display: table;
-      clear: both;
-    }
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
   }
-  
-  // ABSOLUTELY CENTER THE ELEMENT INCLUDING IT
-  @mixin absCenter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+}
 
-  // OFFSET IN-PAGE ANCHORS FROM THE TOP OF THE VIEWPORT
-  @mixin offsetAnchor($top) {
-    display: block;
-    position: relative;
-    top: $top;
-    visibility: hidden;
+// absolutely center an element
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// offset an in-page anchor element
+@mixin offsetAnchor($top) {
+  display: block;
+  position: relative;
+  top: $top;
+  visibility: hidden;
+}
+
+// min-widths for each defined display size
+@mixin respond($breakpoint) {
+  @if $breakpoint == small {
+    @media only screen and (min-width: $small-min-width-px) { @content };
   }
-  
+  @if $breakpoint == medium {
+    @media only screen and (min-width: $medium-min-width-px) { @content };
+  }
+  @if $breakpoint == large {
+    @media only screen and (min-width: $large-min-width-px) { @content };
+  }
+  @if $breakpoint == huge {
+    @media only screen and (min-width: $huge-min-width-px) { @content };
+  }
+}
+
+// css custom properties + fallback
+@mixin var($property, $variable) {
+  #{$property}: map-get($vars, $variable);
+  #{$property}: var(--#{$variable});
+}  

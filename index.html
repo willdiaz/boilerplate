@@ -8,30 +8,17 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="body">
-    <header class="header">
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item">
-                    <a href="/">Home</a>
-                </li>
-                <li class="nav__item">
-                    <a href="/about">About</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main class="main">
-        <section class="hero-image">
-
-        </section>
-        <section class="block">
-            <h1>page header goes here</h1>
-            <p>body copy goes here</p>
-        </section>
+    <main id="app">
+        <h1>{{ message }}</h1>
     </main>
-    <footer class="footer">
-        footer goes here
-    </footer>
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            'el': '#app',
+            'data': {
+                message: 'hello world'
+            }
+        })
+    </script>
 </body>
 </html>

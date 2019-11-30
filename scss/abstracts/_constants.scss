@@ -1,0 +1,36 @@
+// browsers typically assume a base font-size of 16px
+$base-font-size: 16px;
+
+// for simplified font size calculations, set medium displays to 10px
+// each breakpoint above and below will be adjusted accordingly
+$medium-font-size-px: 10;
+$xs-font-size-px: $medium-font-size-px - 2;
+$small-font-size-px: $medium-font-size-px - 1;
+$large-font-size-px: $medium-font-size-px + 1;
+$huge-font-size-px: $medium-font-size-px + 2;
+
+// set the root em (rem) adjustment value for each display size
+$xs-font-size-adj: ($xs-font-size-px * 1px) / $base-font-size * 100%;
+$small-font-size-adj: ($small-font-size-px * 1px) / $base-font-size * 100%;
+$medium-font-size-adj: ($medium-font-size-px * 1px) / $base-font-size * 100%;
+$large-font-size-adj: ($large-font-size-px * 1px) / $base-font-size * 100%;
+$huge-font-size-adj: ($huge-font-size-px * 1px) / $base-font-size * 100%;
+
+// set min-widths in pixels and ems to define display sizes
+$xs-min-width-px: 0;
+$xs-min-width-em: 0;
+
+$small-min-width-px: 600px;
+$small-min-width-em: ($small-min-width-px / $base-font-size) * 1em; // 37.5em
+
+$medium-min-width-px: 900px;
+$medium-min-width-em: ($medium-min-width-px / $base-font-size) * 1em; // 56.25em;
+
+$large-min-width-px: 1200px;
+$large-min-width-em: ($large-min-width-px / $base-font-size) * 1em; // 75em;
+
+$huge-min-width-px: 1800px;
+$huge-min-width-em: ($huge-min-width-px / $base-font-size) * 1em; // 112.5em;
+
+// when in doubt, set an element's font-size to this
+$default-font-size: 1.6rem;

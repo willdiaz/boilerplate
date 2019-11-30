@@ -1,0 +1,26 @@
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+$font-family: "Arial", "Helvetica", sans-serif;
+
+// colors
+$color-black: #000000;
+$color-white: #ffffff;
+$color-primary: #0D9EFF;
+
+$vars: (
+    font-adjust-xs: $xs-font-size-adj,
+    font-adjust-sm: $small-font-size-adj,
+    font-adjust-md: $medium-font-size-adj,
+    font-adjust-lg: $large-font-size-adj,
+    font-adjust-hg: $huge-font-size-adj,
+    default-font-size: $default-font-size,
+    color-fg: $color-black,
+    color-bg: $color-white,
+    color-primary: $color-primary,
+);
+
+$darkvars: (
+    color-fg: $color-white,
+    color-bg: $color-black,
+    color-primary: $color-primary,
+);
