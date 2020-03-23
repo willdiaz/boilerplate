@@ -1,12 +1,3 @@
-// clears floated element
-@mixin clearfix {
-  &::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
-
 // absolutely center an element
 @mixin absCenter {
   position: absolute;
@@ -40,7 +31,42 @@
 }
 
 // css custom properties + fallback
+// https://youtu.be/wI80oS3KLxY
 @mixin var($property, $variable) {
   #{$property}: map-get($vars, $variable);
   #{$property}: var(--#{$variable});
-}  
+}
+
+// simplify keyframe animations
+// https://joshbroton.com/quick-fix-sass-mixins-for-css-keyframe-animations/
+@mixin animation($animate...) {
+  $max: length($animate);
+  $animations: '';
+
+  @for $i from 1 through $max {
+    $animations: #{$animations + nth($animate, $i)};
+
+    @if $i < $max {
+        $animations: #{$animations + ", "};
+    }
+  }
+  -webkit-animation: $animations;
+  -moz-animation:    $animations;
+  -o-animation:      $animations;
+  animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}

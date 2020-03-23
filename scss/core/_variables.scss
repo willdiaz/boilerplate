@@ -1,0 +1,21 @@
+$vars: (
+    font-adjust-xs: $xs-font-size-adj,
+    font-adjust-sm: $small-font-size-adj,
+    font-adjust-md: $medium-font-size-adj,
+    font-adjust-lg: $large-font-size-adj,
+    font-adjust-hg: $huge-font-size-adj,
+    default-font-size: $default-font-size,
+    color-fg: $color-black,
+    color-bg: $color-white,
+    color-primary: $wd-lt-purple,
+    color-secondary: $wd-lt-pink,
+    color-tertiary: $wd-lt-salmon,
+);
+
+$darkvars: (
+    color-fg: $color-white,
+    color-bg: $color-black,
+    color-primary: $wd-dk-purple,
+    color-secondary: $wd-dk-pink,
+    color-tertiary: $wd-dk-salmon,
+);

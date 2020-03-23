@@ -1,0 +1,58 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+// *,
+// *:before,
+// *:after,
+// html {
+//   -moz-box-sizing: border-box;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+// }
+
+:root {
+    @each $property, $value in $vars {
+      --#{$property}: #{$value};
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+      @each $property, $value in $darkvars {
+        --#{$property}: #{$value};
+      }  
+    }
+  }
+
+html {
+    @include var(font-size, font-adjust-xs);
+    @include respond(small) {
+        @include var(font-size, font-adjust-sm);
+    }
+    @include respond(medium) {
+        @include var(font-size, font-adjust-md);
+    }
+    @include respond(large) {
+        @include var(font-size, font-adjust-lg);
+    }
+    @include respond(huge) {
+        @include var(font-size, font-adjust-hg);
+    }  
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    @include var(background, color-bg);
+    @include var(color, color-fg);
+    @include var(font-size, default-font-size);
+    font-family: $font-family;
+    line-height: 160%;
+    min-height: 100%;
+}
